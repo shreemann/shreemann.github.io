@@ -6,19 +6,20 @@ body {
   padding: 0;
 }
 
-/* NAVBAR STYLES */
+/* CENTERED NAVBAR */
 .navbar {
   background-color: #fff;
-  padding: 15px 30px;
+  padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center; /* center nav content */
 }
 
 .navbar ul {
   list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 40px;
 }
 
 .navbar li {
@@ -28,39 +29,42 @@ body {
 .navbar a {
   text-decoration: none;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding-bottom: 5px;
   border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .navbar li.active a {
-  border-color: #4caf50; /* green underline for active tab */
+  border-color: #39ff14; /* bright neon green */
 }
 
 /* ABOUT SECTION */
 .about-section {
   max-width: 800px;
   margin: auto;
-  padding: 60px 30px;
+  padding: 40px 30px 60px; /* reduced top padding */
+  margin-top: -30px; /* pulls section up to reduce scroll */
 }
 
 .section-title {
   font-weight: 600;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   position: relative;
   display: inline-block;
   color: #222;
 }
 
+/* BRIGHT GREEN UNDERLINE CLOSE TO TEXT */
 .section-title::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0px; /* bring closer to text */
   left: 0;
   height: 3px;
   width: 100%;
-  background-color: #4caf50; /* green underline */
+  background-color: #39ff14; /* neon green */
 }
 
 .about-text {
@@ -75,19 +79,20 @@ strong {
   font-weight: 600;
 }
 
-/* SOCIAL LINKS */
+/* SOCIAL ICONS */
 .social-links {
   margin-top: 30px;
+  text-align: center;
 }
 
 .social-links a {
   margin-right: 20px;
-  font-weight: 600;
-  color: #4caf50;
+  color: #39ff14;  /* neon green */
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  text-decoration: underline;
+  color: #2efc0a;
 }
