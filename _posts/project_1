@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Building a Credit Risk Scorecard for SME Lending"
+date: 2024-07-30
+---
+
+In this post, I walk through how I built a behavioural scorecard using 3,500+ bureau and banking features for SME customers.
+
+### Techniques used:
+- IV and WOE analysis
+- Feature clustering
+- Reject inference
+- Model validation across train/test/OOT
+
+### Impact:
+- 📈 Gini improved by 12%
+- 💰 ₹500 Cr disbursal uplift
