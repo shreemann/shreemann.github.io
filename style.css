@@ -96,3 +96,24 @@ strong {
 .social-links a:hover {
   color: #2efc0a;
 }
+/* Existing navbar link styling */
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect — neon green underline AND text */
+.navbar a:hover {
+  color: #39ff14;
+  border-color: #39ff14;
+}
+
+/* Active tab — keeps green text and underline */
+.navbar li.active a {
+  color: #39ff14;
+  border-color: #39ff14;
+}
