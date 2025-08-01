@@ -1,0 +1,44 @@
+body {
+  background-color: #f9f9f9;  /* light grey */
+  color: #333;                /* dark text */
+  font-family: 'Libre Franklin', sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: auto;
+  padding-top: 60px;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  color: #222;
+}
+
+/* Green underline effect */
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #4caf50; /* green underline */
+}
+
+.about-text {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: 600;
+}
