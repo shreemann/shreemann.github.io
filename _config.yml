@@ -1,15 +1,13 @@
 title: "Shreemann Mishra"
 description: "Portfolio | Credit Risk | Data Science"
-baseurl: "" # Leave empty for root domain
+baseurl: ""
 url: "https://shreemann.github.io"
+
+remote_theme: daviddarnes/garth
 
 author:
   name: "Shreemann Mishra"
   email: "shreem2412@gmail.com"
-  github: shreemann
-  linkedin: shreemann-mishra
-  medium: shreem2412
 
-theme: garth
 permalink: pretty
 paginate: 6
