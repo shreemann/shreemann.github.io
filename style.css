@@ -131,18 +131,23 @@ strong {
 }
 
 .project-wrapper {
+  width: 300px; /* limit size */
+  max-width: 100%;
   list-style: none;
-  width: 300px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: #fff;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .project-wrapper:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.project-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 .project-title {
