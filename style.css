@@ -174,9 +174,11 @@ a.project-link {
 }
 
 .project-wrapper img {
-  width: 100%;
-  margin-bottom: 1em;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
 }
 
 .project-title {
@@ -216,6 +218,7 @@ li .project-description {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+
 }
 
  .project-grid {
