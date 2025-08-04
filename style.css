@@ -103,3 +103,47 @@ strong {
 .social-links a:hover {
   color: #32cd32;
 }
+.projects-section {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+.project-card {
+  margin-bottom: 30px;
+}
+
+.project-card h2 a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card h2 a:hover {
+  color: #32cd32;
+  border-color: #32cd32;
+}
+
+/* Optional: full project page */
+.project-details {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 30px;
+  text-align: justify;
+}
+
+
+.project-details a {
+  color: #32cd32;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-details a:hover {
+  color: #000;
+  border-color: #32cd32;
+}
+
