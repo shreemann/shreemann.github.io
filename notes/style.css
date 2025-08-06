@@ -44,10 +44,10 @@ a:hover {
   text-align: center;
 }
 .intro__overline {
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 .intro__hed {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   margin: 0.9rem auto;
   text-transform: uppercase;
   font-weight: 900;
@@ -321,10 +321,10 @@ hr {
     margin-top: 0rem;
   }
   .intro__overline {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .intro__hed {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin: 0.9rem auto;
     text-transform: uppercase;
     font-weight: 900;
@@ -336,7 +336,7 @@ hr {
   }
 
   .intro__bod {
-    font-size: 0.8rem;
+    font-size: 1.45rem;
   }
   .chart {
     position: absolute;
@@ -383,7 +383,7 @@ hr {
 
 @media (max-width: 600px) {
   .intro__bod {
-    font-size: 0.95rem;
+    font-size: 2.2rem;
   }
 
   #scroll {
@@ -456,7 +456,7 @@ hr {
 
 /* Optional: shrink body text slightly if it's still too long */
 .intro__bod {
-  font-size: 1rem;
+  font-size: 1.45rem;
 }
 
 .tooltip {
