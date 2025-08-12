@@ -61,7 +61,7 @@
 
     // Draw boxes
     boxes.forEach(b => {
-      let rect = rc.rectangle(b.x, b.y, 140, 60, { roughness: 2, stroke: '##71A9EA', fill: 'white', fillStyle: 'solid' });
+      let rect = rc.rectangle(b.x, b.y, 140, 60, { roughness: 2, stroke: '#71A9EA', fill: 'white', fillStyle: 'solid' });
       svg.node().appendChild(rect);
 
       svg.append("text")
@@ -86,7 +86,7 @@
     ];
 
     connections.forEach(line => {
-      let path = rc.line(line[0].x, line[0].y, line[1].x, line[1].y, { stroke: '#32cd32' });
+      let path = rc.line(line[0].x, line[0].y, line[1].x, line[1].y, { stroke: '#71A9EA' });
       svg.node().appendChild(path);
     });
   </script>
