@@ -61,15 +61,15 @@
 
     // Draw boxes
     boxes.forEach(b => {
-      let rect = rc.rectangle(b.x, b.y, 140, 60, { roughness: 2, stroke: '#32cd32', fill: 'white', fillStyle: 'solid' });
+      let rect = rc.rectangle(b.x, b.y, 140, 60, { roughness: 2, stroke: '##71A9EA', fill: 'white', fillStyle: 'solid' });
       svg.node().appendChild(rect);
 
       svg.append("text")
         .attr("x", b.x + 70)
         .attr("y", b.y + 35)
         .attr("text-anchor", "middle")
-        .attr("font-family", "Libre Franklin")
-        .attr("font-size", "14px")
+        .attr("font-family", "Gaegu")
+		.attr("font-size", "16px")
         .attr("fill", "#000")
         .text(b.text)
         .style("cursor", "pointer")
