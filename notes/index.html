@@ -25,94 +25,70 @@
 </head>
 
 <body>
-	<section id="intro" class="full-screen-intro">
-		<p class='intro__overline'>
-			Aug 2025 By <a href='https://www.linkedin.com/in/shreemann-mishra/'>Shreemann Mishra</a>
-		</p>
-		<h1 class='intro__hed'>Theory & Things</h1>
-		<p class='intro__dek'>
-			A visual stack of my messy notes
-		</p>
-		<p class='intro__bod'>
-			Since '17, I have been writing down tips and tricks on brown tinted notebooks, outlines of old xerox pages and every notes app I came across.
-			These were passed down by random youtube videos, colleagues, mentors and a few failed experiments. 
-			<span class='tooltip'>*<span class="tooltiptext">By a few, I mean A LOT.</span></span>.
+  <section id="intro" class="full-screen-intro">
+    <p class='intro__overline'>
+      Aug 2025 By <a href='https://www.linkedin.com/in/shreemann-mishra/'>Shreemann Mishra</a>
+    </p>
+    <h1 class='intro__hed'>Theory & Things</h1>
+    <p class='intro__dek'>A visual stack of my messy notes</p>
+    <p class='intro__bod'>
+      Since '17, I have been writing down tips and tricks on brown tinted notebooks, outlines of old xerox pages and every notes app I came across.
+      These were passed down by random youtube videos, colleagues, mentors and a few failed experiments. 
+      <span class='tooltip'>*<span class="tooltiptext">By a few, I mean A LOT.</span></span>.
+      <br><br>
+      Needless to say, it was long overdue that I compiled everything I have to something I call more organized than my desk.
+    </p>
+  </section>
 
-			<br><br>
-			Needless to say, it was long overdue that I compiled everything I have to something I call more organized than my desk. 
-			In case of anything erraneous, stumble over to my socials and I'll undeniably amend it!
-
-	</section>
- <!-- Flowchart Section -->
-  <div class="chart-container">
-    <svg id="flowchart" width="1000" height="400"></svg>
+  <!-- FLOWCHART SECTION -->
+  <div style="text-align:center; margin-top:50px;">
+    <svg id="flowchart" width="900" height="400"></svg>
   </div>
 
   <script>
-    // Flowchart data — change names & URLs here
-    const data = {
-      name: "Statistics",
-      url: "https://mint-line-892.notion.site/Statistics-245b24c3018680a68c72e062c762ec67",
-      children: [
-        {
-          name: "Central Tendency",
-          url: "https://mint-line-892.notion.site/Central-Tendency-245b24c301868043942edf1fc0b1f5dc",
-          children: [
-            { name: "Probability", url: "https://example.com/probability" },
-            { name: "Distributions", url: "https://example.com/distributions" }
-          ]
-        },
-        {
-          name: "Statistical Tests",
-          url: "https://mint-line-892.notion.site/Statistical-Tests-245b24c3018680ea9c6fdeb296ce8619",
-          children: [
-            { name: "Supervised", url: "https://example.com/supervised" },
-            { name: "Unsupervised", url: "https://example.com/unsupervised" }
-          ]
-        }
-      ]
-    };
+    const svg = d3.select("#flowchart");
+    const rc = rough.svg(svg.node());
 
-    const svg = d3.select("#flowchart"),
-          g = svg.append("g").attr("transform", "translate(50,50)");
+    // Define your boxes
+    const boxes = [
+      { x: 50,  y: 150, text: "Statistics",       url: "https://mint-line-892.notion.site/Statistics-245b24c3018680a68c72e062c762ec67" },
+      { x: 300, y: 50,  text: "Central Tendency",    url: "https://mint-line-892.notion.site/Central-Tendency-245b24c301868043942edf1fc0b1f5dc" },
+      { x: 300, y: 250, text: "Statistical Tests",    url: "https://mint-line-892.notion.site/Statistical-Tests-245b24c3018680ea9c6fdeb296ce8619" },
+      { x: 550, y: 50,  text: "Detail A1",   url: "detail-a1.html" },
+      { x: 550, y: 150, text: "Detail A2",   url: "detail-a2.html" },
+      { x: 550, y: 250, text: "Detail B1",   url: "detail-b1.html" }
+    ];
 
-    const root = d3.hierarchy(data);
-    const tree = d3.tree().nodeSize([120, 200]); // vertical, horizontal spacing
-    tree(root);
+    // Draw boxes
+    boxes.forEach(b => {
+      let rect = rc.rectangle(b.x, b.y, 140, 60, { roughness: 2, stroke: '#32cd32', fill: 'white', fillStyle: 'solid' });
+      svg.node().appendChild(rect);
 
-    // Draw links
-    g.selectAll(".link")
-      .data(root.links())
-      .enter()
-      .append("path")
-      .attr("class", "link")
-      .attr("d", d3.linkHorizontal()
-        .x(d => d.y)
-        .y(d => d.x)
-      );
+      svg.append("text")
+        .attr("x", b.x + 70)
+        .attr("y", b.y + 35)
+        .attr("text-anchor", "middle")
+        .attr("font-family", "Libre Franklin")
+        .attr("font-size", "14px")
+        .attr("fill", "#000")
+        .text(b.text)
+        .style("cursor", "pointer")
+        .on("click", () => window.open(b.url, "_blank"));
+    });
 
-    // Draw nodes
-    const node = g.selectAll(".node")
-      .data(root.descendants())
-      .enter()
-      .append("g")
-      .attr("transform", d => `translate(${d.y},${d.x})`)
-      .style("cursor", "pointer")
-      .on("click", (event, d) => {
-        if (d.data.url) window.open(d.data.url, "_blank");
-      });
+    // Connect boxes with lines
+    const connections = [
+      [ {x: 190, y: 180}, {x: 300, y: 80} ],  // Start → Option A
+      [ {x: 190, y: 180}, {x: 300, y: 280} ], // Start → Option B
+      [ {x: 440, y: 80}, {x: 550, y: 80} ],   // Option A → Detail A1
+      [ {x: 440, y: 80}, {x: 550, y: 180} ],  // Option A → Detail A2
+      [ {x: 440, y: 280}, {x: 550, y: 280} ]  // Option B → Detail B1
+    ];
 
-    node.append("rect")
-      .attr("class", "node")
-      .attr("x", -60)
-      .attr("y", -20)
-      .attr("width", 120)
-      .attr("height", 40);
-
-    node.append("text")
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "middle")
-      .text(d => d.data.name);
+    connections.forEach(line => {
+      let path = rc.line(line[0].x, line[0].y, line[1].x, line[1].y, { stroke: '#32cd32' });
+      svg.node().appendChild(path);
+    });
   </script>
 </body>
 </html>
